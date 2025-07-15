@@ -1,5 +1,5 @@
 <template>
-  <table :style="estiloTabela">
+  <table class="tabela-comparacao">
     <HeaderTabela
       :chaveAtual="chaveAtual"
       :direcao="direcao"
@@ -81,17 +81,5 @@ const produtosOrdenados = computed(() => {
     if (valorA === valorB) return 0;
     return (valorA < valorB ? -1 : 1) * (asc ? 1 : -1);
   });
-});
-
-const estiloTabela = computed(() => {
-  return {
-    borderCollapse: "collapse",
-    boxShadow: `
-      0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -1px rgba(0, 0, 0, 0.06),
-      0 10px 15px -3px rgba(0, 0, 0, 0.1),
-      0 4px 6px -2px rgba(0, 0, 0, 0.05)
-    `,
-  };
 });
 </script>

@@ -1,12 +1,19 @@
 <template>
-  <td :style="estiloTd" class="pa-2 text-center">
+  <td
+    class="preco-td"
+    :class="{
+      'preco-mais-barato': maisBarato,
+      'preco-mais-caro': maisCaro,
+      'preco-nossa-loja': nossoPreco,
+      'preco-default': !maisBarato && !maisCaro && !nossoPreco,
+    }"
+  >
     <span>{{ precoFormatado }}</span>
   </td>
 </template>
 
 <script setup>
 import { computed } from "vue";
-import { useTheme } from "vuetify";
 
 const props = defineProps({
   preco: {
@@ -27,8 +34,6 @@ const props = defineProps({
   },
 });
 
-const theme = useTheme();
-
 const precoFormatado = computed(() => {
   if (props.preco == null) {
     return "N/A";
@@ -38,32 +43,5 @@ const precoFormatado = computed(() => {
     style: "currency",
     currency: "BRL",
   }).format(props.preco);
-});
-
-const estiloTd = computed(() => {
-  const currentTheme = theme.global.current.value;
-  if (props.maisBarato) {
-    return {
-      backgroundColor: currentTheme.colors["cor-mais-barato"],
-      color: "#000",
-    };
-  }
-  if (props.maisCaro) {
-    return {
-      backgroundColor: currentTheme.colors["cor-mais-caro"],
-      color: "#000",
-    };
-  }
-  if (props.nossoPreco) {
-    return {
-      backgroundColor: currentTheme.colors["cor-nossa-loja"],
-      color: "#000",
-    };
-  }
-
-  return {
-    backgroundColor: currentTheme.colors.grey,
-    color: "#000",
-  };
 });
 </script>

@@ -1,6 +1,6 @@
 <template>
   <tr>
-    <td :style="estiloNomeProduto">{{ produto.nome }}</td>
+    <td class="nome-produto">{{ produto.nome }}</td>
     <Preco
       v-for="coluna in colunasPreco"
       :key="coluna.chave"
@@ -36,12 +36,5 @@ const minPreco = computed(() => {
 
 const maxPreco = computed(() => {
   return precos.value.length === 0 ? null : Math.max(...precos.value);
-});
-
-const estiloNomeProduto = computed(() => {
-  return {
-    fontWeight: "bold",
-    padding: "12px 16px",
-  };
 });
 </script>

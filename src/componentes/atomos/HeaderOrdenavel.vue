@@ -1,5 +1,12 @@
 <template>
-  <th @click="handleSort" :style="estiloTh">
+  <th
+    @click="handleSort"
+    class="header-ordenavel"
+    :class="{
+      ativo: props.chave === props.chaveAtual,
+      inativo: props.chave !== props.chaveAtual,
+    }"
+  >
     {{ label }}
     <span> {{ icone }}</span>
   </th>
@@ -7,7 +14,6 @@
 
 <script setup>
 import { computed } from "vue";
-import { useTheme } from "vuetify";
 
 const props = defineProps({
   label: {
@@ -28,10 +34,7 @@ const props = defineProps({
   },
 });
 
-const theme = useTheme();
 const emit = defineEmits(["sort"]);
-
-const currentTheme = theme.global.current.value;
 
 const handleSort = () => {
   emit("sort", props.chave);
@@ -42,19 +45,5 @@ const icone = computed(() => {
     return "";
   }
   return props.direcao == "asc" ? "▼" : "▲";
-});
-
-const estiloTh = computed(() => {
-  return {
-    cursor: "pointer",
-    backgroundColor:
-      props.chave === props.chaveAtual
-        ? currentTheme.colors.info
-        : "transparent",
-    color: props.chave === props.chaveAtual ? "#fff" : currentTheme.colors.grey,
-
-    padding: "12px 16px",
-    transition: "all 0.2s ease",
-  };
 });
 </script>

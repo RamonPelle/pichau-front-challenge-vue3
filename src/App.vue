@@ -24,18 +24,19 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { ref, computed } from "vue";
 import { useTheme } from "vuetify";
 
 const theme = useTheme();
 
+const isDarkMode = ref(false);
+
 const toggleTheme = () => {
-  theme.global.name.value = theme.global.current.value.dark ? "light" : "dark";
+  isDarkMode.value = !isDarkMode.value;
+  theme.global.name.value = isDarkMode.value ? "dark" : "light";
 };
 
 const themeIcon = computed(() => {
-  return theme.global.current.value.dark
-    ? "mdi-weather-sunny"
-    : "mdi-weather-night";
+  return isDarkMode.value ? "mdi-weather-sunny" : "mdi-weather-night";
 });
 </script>

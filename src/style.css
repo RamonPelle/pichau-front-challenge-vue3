@@ -6,8 +6,188 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* LIGHT MODE */
+  --cor-mais-barato: #8ac926ff;
+  --cor-mais-caro: #ff595eff;
+  --cor-nossa-loja: #5d9ac1ff;
+  --cor-header-ativo: #8a64beff;
+  --cor-grey: #bebebeff;
+}
+
+/* DARK MODE */
+[data-theme="dark"] {
+  --cor-mais-barato: #a3d642ff;
+  --cor-mais-caro: #ff7a7fff;
+  --cor-nossa-loja: #7bb5d6ff;
+  --cor-header-ativo: #8a64beff;
+  --cor-grey: #bebebeff;
 }
 
 body {
   margin: 0;
+}
+
+/* HeaderOrdenavel.vue */
+.header-ordenavel {
+  cursor: pointer;
+  padding: 16px 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: none;
+  position: relative;
+}
+
+.header-ordenavel::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--cor-header-ativo);
+  transition: width 0.3s ease;
+}
+
+.header-ordenavel.ativo {
+  background: linear-gradient(135deg, var(--cor-header-ativo));
+  color: #fff;
+}
+
+.header-ordenavel.ativo::after {
+  width: 100%;
+}
+
+.header-ordenavel.inativo {
+  background-color: transparent;
+  color: var(--cor-grey);
+}
+
+.header-ordenavel.inativo:hover {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.05));
+}
+
+.header-ordenavel.inativo:hover::after {
+  width: 100%;
+}
+
+[data-theme="dark"] .header-ordenavel.inativo:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.1)
+  );
+}
+
+/* Preco.vue */
+.preco-td {
+  padding: 16px 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.preco-td::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.preco-td:hover::before {
+  left: 100%;
+}
+
+.preco-mais-barato {
+  background: linear-gradient(
+    135deg,
+    var(--cor-mais-barato),
+    color-mix(in srgb, var(--cor-mais-barato) 85%, white)
+  );
+  color: #000;
+  box-shadow: 0 4px 12px
+    color-mix(in srgb, var(--cor-mais-barato) 30%, transparent);
+}
+
+.preco-mais-caro {
+  background: linear-gradient(
+    135deg,
+    var(--cor-mais-caro),
+    color-mix(in srgb, var(--cor-mais-caro) 85%, white)
+  );
+  color: #000;
+  box-shadow: 0 4px 12px
+    color-mix(in srgb, var(--cor-mais-caro) 30%, transparent);
+}
+
+.preco-nossa-loja {
+  background: linear-gradient(
+    135deg,
+    var(--cor-nossa-loja),
+    color-mix(in srgb, var(--cor-nossa-loja) 85%, white)
+  );
+  color: #000;
+  box-shadow: 0 4px 12px
+    color-mix(in srgb, var(--cor-nossa-loja) 30%, transparent);
+  border: 2px solid color-mix(in srgb, var(--cor-nossa-loja) 70%, white);
+}
+
+.preco-default {
+  background: linear-gradient(
+    135deg,
+    var(--cor-grey),
+    color-mix(in srgb, var(--cor-grey) 90%, white)
+  );
+  color: #000;
+}
+
+/* LinhaProduto.vue */
+.nome-produto {
+  font-weight: bold;
+  padding: 12px 16px;
+}
+
+/* TabelaComparacaoPrecos.vue */
+.tabela-comparacao {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.tabela-comparacao tbody tr {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tabela-comparacao tbody tr:nth-child(even) {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.03));
+}
+
+.tabela-comparacao tbody tr:hover {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .tabela-comparacao tbody tr:nth-child(even) {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.05)
+  );
+}
+
+[data-theme="dark"] .tabela-comparacao tbody tr:hover {
+  box-shadow: 0 12px 30px rgba(241, 241, 241, 0.15);
 }
