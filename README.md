@@ -1,4 +1,6 @@
-# Comparador de Preços - Desafio Pichau
+# Tarefa 2: Comparador de Preços - Desafio Pichau
+
+OBS: A tarefa 1 está nesse repositório em um arquivo PDF.
 
 ## O que foi feito
 
