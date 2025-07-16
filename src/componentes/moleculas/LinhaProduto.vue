@@ -26,15 +26,21 @@ const obterPrecoColuna = (coluna) => {
   return valor === "N/A" ? null : Number(valor);
 };
 
-const precos = computed(() => {
-  return props.colunasPreco.map((coluna) => obterPrecoColuna(coluna));
+const precosValidos = computed(() => {
+  return props.colunasPreco
+    .map((coluna) => obterPrecoColuna(coluna))
+    .filter((preco) => preco !== null);
 });
 
 const minPreco = computed(() => {
-  return precos.value.length === 0 ? null : Math.min(...precos.value);
+  return precosValidos.value.length === 0
+    ? null
+    : Math.min(...precosValidos.value);
 });
 
 const maxPreco = computed(() => {
-  return precos.value.length === 0 ? null : Math.max(...precos.value);
+  return precosValidos.value.length === 0
+    ? null
+    : Math.max(...precosValidos.value);
 });
 </script>
