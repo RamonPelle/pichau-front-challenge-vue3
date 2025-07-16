@@ -69,7 +69,7 @@ body {
 .preco-td {
   padding: 16px 12px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 15px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -96,6 +96,17 @@ body {
   left: 100%;
 }
 
+.preco-nossa-loja {
+  background: linear-gradient(
+    135deg,
+    var(--cor-grey),
+    color-mix(in srgb, var(--cor-grey) 90%, white)
+  );
+  color: #000;
+  font-weight: bold;
+  color: #000;
+}
+
 .preco-mais-barato {
   background: linear-gradient(
     135deg,
@@ -116,17 +127,6 @@ body {
   color: #000;
   box-shadow: 0 4px 12px
     color-mix(in srgb, var(--cor-mais-caro) 30%, transparent);
-}
-
-.preco-nossa-loja {
-  background: linear-gradient(
-    135deg,
-    var(--cor-nossa-loja),
-    color-mix(in srgb, var(--cor-nossa-loja) 85%, white)
-  );
-  color: #000;
-  box-shadow: 0 4px 12px
-    color-mix(in srgb, var(--cor-nossa-loja) 30%, transparent);
 }
 
 .preco-default {
