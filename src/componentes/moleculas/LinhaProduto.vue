@@ -44,3 +44,10 @@ const maxPreco = computed(() => {
     : Math.max(...precosValidos.value);
 });
 </script>
+
+<style scoped>
+.nome-produto {
+  font-weight: bold;
+  padding: 12px 16px;
+}
+</style>

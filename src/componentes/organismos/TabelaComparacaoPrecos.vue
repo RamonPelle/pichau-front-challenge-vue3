@@ -83,3 +83,23 @@ const produtosOrdenados = computed(() => {
   });
 });
 </script>
+
+<style scoped>
+.tabela-comparacao {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.tabela-comparacao tbody tr {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tabela-comparacao tbody tr:nth-child(even) {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.03));
+}
+
+.tabela-comparacao tbody tr:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+</style>
