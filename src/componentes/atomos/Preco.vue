@@ -4,7 +4,7 @@
     :class="{
       'preco-mais-barato': maisBarato,
       'preco-mais-caro': maisCaro,
-      'preco-nossa-loja': nossoPreco,
+      'preco-nossa-loja': nossoPreco && !maisBarato && !maisCaro,
       'preco-default': !maisBarato && !maisCaro && !nossoPreco,
     }"
   >

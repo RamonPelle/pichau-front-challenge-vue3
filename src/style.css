@@ -127,7 +127,6 @@ body {
   color: #000;
   box-shadow: 0 4px 12px
     color-mix(in srgb, var(--cor-nossa-loja) 30%, transparent);
-  border: 2px solid color-mix(in srgb, var(--cor-nossa-loja) 70%, white);
 }
 
 .preco-default {
