@@ -51,7 +51,7 @@ Seções maiores e mais complexas da interface, compostas por moléculas e/ou á
 
 As páginas da aplicação, onde os organismos são montados para criar a interface final que o usuário vê.
 
-- `HomeView.vue`: A página principal. Ela busca os dados (atualmente do mock), gerencia a lista de produtos filtrados e renderiza o organismo `TabelaComparacaoPrecos`.
+- `Home.vue`: A página principal. Ela busca os dados (atualmente do mock), gerencia a lista de produtos e renderiza o organismo `TabelaComparacaoPrecos`.
 
 ## Melhorias de Frontend
 
