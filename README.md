@@ -1,6 +1,7 @@
 # Tarefa 2: Comparador de Preços - Desafio Pichau
 
 OBS: A tarefa 1 está nesse repositório em um arquivo PDF.
+Deploy em: https://desafiopichau.vercel.app
 
 ## O que foi feito
 
