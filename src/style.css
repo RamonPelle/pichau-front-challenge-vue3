@@ -7,19 +7,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* LIGHT MODE */
+  /* CORES DO SISTEMA */
   --cor-mais-barato: #8ac926ff;
   --cor-mais-caro: #ff595eff;
   --cor-nossa-loja: #5d9ac1ff;
-  --cor-header-ativo: #8a64beff;
-  --cor-grey: #bebebeff;
-}
-
-/* DARK MODE */
-[data-theme="dark"] {
-  --cor-mais-barato: #a3d642ff;
-  --cor-mais-caro: #ff7a7fff;
-  --cor-nossa-loja: #7bb5d6ff;
   --cor-header-ativo: #8a64beff;
   --cor-grey: #bebebeff;
 }
@@ -72,14 +63,6 @@ body {
 
 .header-ordenavel.inativo:hover::after {
   width: 100%;
-}
-
-[data-theme="dark"] .header-ordenavel.inativo:hover {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.1)
-  );
 }
 
 /* Preco.vue */
@@ -177,17 +160,6 @@ body {
 }
 
 .tabela-comparacao tbody tr:hover {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
-}
-
-[data-theme="dark"] .tabela-comparacao tbody tr:nth-child(even) {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.03),
-    rgba(255, 255, 255, 0.05)
-  );
-}
-
-[data-theme="dark"] .tabela-comparacao tbody tr:hover {
-  box-shadow: 0 12px 30px rgba(241, 241, 241, 0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
 }

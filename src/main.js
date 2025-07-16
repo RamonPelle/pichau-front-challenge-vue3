@@ -20,14 +20,6 @@ const vuetify = createVuetify({
         dark: false,
         colors: {
           pichau: "#ff595eff",
-          background: "#ffffff",
-        },
-      },
-      dark: {
-        dark: true,
-        colors: {
-          pichau: "#ff7a7fff",
-          background: "#121212",
         },
       },
     },

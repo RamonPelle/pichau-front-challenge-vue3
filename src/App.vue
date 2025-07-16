@@ -7,10 +7,6 @@
       </v-app-bar-title>
 
       <v-spacer></v-spacer>
-
-      <v-btn icon @click="toggleTheme" variant="text" color="white">
-        <v-icon>{{ themeIcon }}</v-icon>
-      </v-btn>
     </v-app-bar>
 
     <v-main>
@@ -23,20 +19,4 @@
   </v-app>
 </template>
 
-<script setup>
-import { ref, computed } from "vue";
-import { useTheme } from "vuetify";
-
-const theme = useTheme();
-
-const isDarkMode = ref(false);
-
-const toggleTheme = () => {
-  isDarkMode.value = !isDarkMode.value;
-  theme.global.name.value = isDarkMode.value ? "dark" : "light";
-};
-
-const themeIcon = computed(() => {
-  return isDarkMode.value ? "mdi-weather-sunny" : "mdi-weather-night";
-});
-</script>
+<script setup></script>
